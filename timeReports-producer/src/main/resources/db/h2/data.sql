@@ -22,3 +22,5 @@ INSERT INTO worklogs (id, worker_id, task_id, day, from_time, to_time, descripti
 INSERT INTO worklogs (id, worker_id, task_id, day, from_time, to_time, description) VALUES (7, 4, 1, '2020-05-05', '08:30:00', '09:30:00', 'Daily meeting' );
 INSERT INTO worklogs (id, worker_id, task_id, day, from_time, to_time, description) VALUES (8, 1, 3, '2020-05-05', '09:30:00', '16:30:00', 'Create database and queries' );
 INSERT INTO worklogs (id, worker_id, task_id, day, from_time, to_time, description) VALUES (9, 1, 3, '2020-05-05', '08:30:00', '11:00:00', 'Create de frontend form for selecting user and date' );
+INSERT INTO worklogs (id, worker_id, task_id, day, from_time, to_time, description) VALUES (10, 1, 1, '2020-05-10', '08:30:00', '09:30:00', 'Daily meeting' );
+
