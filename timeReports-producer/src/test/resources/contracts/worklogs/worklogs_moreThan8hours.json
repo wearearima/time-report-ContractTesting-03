@@ -35,7 +35,7 @@
 		"description": "Create database and queries",
 		"new": false
 	},
-	{
+		{
 		"id": 9,
 		"worker": {
 			"id": 1,

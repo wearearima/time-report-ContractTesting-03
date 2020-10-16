@@ -1,19 +1,49 @@
-description: Given a worker's username and a day it returns the worklog info for that worker and day
-name: worklogsForWokerAndDay_success
+description: Given a worker's username and a day it returns worklogs with 8 hours
+name: worklogsForWokerAndDay_with_8hours_worklogs
 request:
-   urlPath: /worklogs/worker/JESSI
+   url: /worklogs/worker/JESSI
+   queryParameters:
+      day: "2020-05-01"
+   method: GET
+   matchers:
+    url:
+      regex: /worklogs/worker/([a-zA-Z]*)    
+response:
+   status: 200
+   headers:
+      Content-Type: "application/json"
+   bodyFromFile: worklogs_8hours.json
+
+---   
+description: Given a worker's username and a day it returns worklogs that sum more than 8 hours
+name: worklogsForWokerAndDay_with_moreThan8hours_worklogs
+request:
+   url: /worklogs/worker/JESSI
    queryParameters:
       day: "2020-05-05"
    method: GET
    matchers:
     url:
-      regex: /worklogs/worker/([a-zA-Z]*)
-    queryParameters:
-      - key: day
-        type: matching
-        value: "(\\d\\d\\d\\d)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+      regex: /worklogs/worker/([a-zA-Z]*)    
 response:
    status: 200
    headers:
       Content-Type: "application/json"
-   bodyFromFile: worklogsForJessiOn20200505Response.json
+   bodyFromFile: worklogs_moreThan8hours.json
+   
+---   
+description: Given a worker's username and a day it returns worklogs that sum less than 8 hours
+name: worklogsForWokerAndDay_with_lessThan8hours_worklogs
+request:
+   url: /worklogs/worker/JESSI
+   queryParameters:
+      day: "2020-05-10"
+   method: GET
+   matchers:
+    url:
+      regex: /worklogs/worker/([a-zA-Z]*)    
+response:
+   status: 200
+   headers:
+      Content-Type: "application/json"
+   bodyFromFile: worklogs_lessThan8hours.json
